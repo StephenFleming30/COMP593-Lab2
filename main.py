@@ -27,11 +27,11 @@ def print_student_id(about_me):
 def add_pizza_toppings(about_me, pizza_toppings):
     for topping in pizza_toppings:
         about_me["pizza_toppings"].append(topping)
-    about_me["pizza_toppings"].sort()
     about_me["pizza_toppings"] = [topping.casefold() for topping in about_me["pizza_toppings"]]
     return about_me["pizza_toppings"]
 
 def print_bullet_list(about_me):
+    about_me["pizza_toppings"].sort()
     print("\nMy favourite pizza toppings are:")
     for topping in about_me["pizza_toppings"]:
         print(f"- {topping}")
