@@ -22,7 +22,7 @@ def print_student_id(about_me):
     last_name = about_me["fullname"].split(" ")
     student_id = about_me["student_id"]
     print(f"My name is {fullname}, but you can call me Sir {last_name[0]}.")
-    print(f"My student ID is {student_id}\n")
+    print(f"My student ID is {student_id}.")
 
 def add_pizza_toppings(about_me, pizza_toppings):
     for topping in pizza_toppings:
@@ -51,7 +51,7 @@ def list_of_movie_titles(about_me):
         about_me["movies"][count]["title"] = about_me["movies"][count]["title"].title()
         titles.append(about_me["movies"][count]["title"])
         count += 1
-    print(f"\nSome of my favourite movies are {', '.join(titles)}")
+    print(f"\nSome of my favourite movies are {', '.join(titles)}!")
 
 if __name__ == "__main__":
     main()
