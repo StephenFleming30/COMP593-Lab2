@@ -3,12 +3,12 @@ def main():
         "fullname": "Stephen MacDonald",
         "student_id": 10308012,
         "pizza_toppings": ["PEPPERONI", "SPINACH", "BEEF"],
-        "movies": [{"title" :"hacksaw ridge", "genre": "action"}, 
+        "movies": [{"title" :"hacksaw ridge", "genre": "drama"}, 
                    {"title": "plane", "genre": "action"},
                    ]
     }
 
-    about_me["movies"].append({"title": "the hunger games", "genre": "action and adventure"})
+    about_me["movies"].append({"title": "old dads", "genre": "comedy"})
     pizza_toppings = ("pinnaple", "bacon")
     print_student_id(about_me)
     print_bullet_list(about_me)
@@ -39,19 +39,21 @@ def print_bullet_list(about_me):
 def list_of_movies_genres(about_me):
     genres = []
     count = 0
-    for _ in range(len(about_me["movies"])):
+    last_genre = about_me["movies"][-1]["genre"]
+    for _ in range(len(about_me["movies"]) - 1):
         genres.append(about_me["movies"][count]["genre"])
         count += 1
-    print(f"\nI like to watch {', '.join(genres)}")
+    print(f"\nI like to watch {', '.join(genres)} and {last_genre}.")
 
 def list_of_movie_titles(about_me):
     titles = []
     count = 0
-    for _ in range(len(about_me["movies"])):
+    last_movie = about_me["movies"][-1]["title"].title()
+    for _ in range(len(about_me["movies"]) - 1):
         about_me["movies"][count]["title"] = about_me["movies"][count]["title"].title()
         titles.append(about_me["movies"][count]["title"])
         count += 1
-    print(f"\nSome of my favourite movies are {', '.join(titles)}!")
+    print(f"\nSome of my favourite movies are {', '.join(titles)} and {last_movie}!")
 
 if __name__ == "__main__":
     main()
